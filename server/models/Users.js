@@ -5,16 +5,22 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  age: {
-    type: Number,
+  email: {
+    type: String,
+    unique:true,
     required: true,
   },
-  username: {
+  password: {
     type: String,
     required: true,
   },
+  date:{
+    type:Date,
+    default:Date.now
+  }
 });
-
-const UserModel = mongoose.model("users", UserSchema);
+const User = mongoose.model("users", UserSchema);
+User.createIndexes();
+const UserModel = User
 
 module.exports = UserModel;

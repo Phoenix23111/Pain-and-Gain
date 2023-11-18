@@ -3,12 +3,18 @@ const express = require("express");
 const UserModel = require("./models/Users");
 const app = express();
 const cors = require("cors");
+connectToMongo();
+port = 3001;
 
 app.use(express.json());
 app.use(cors());
 
-connectToMongo();
-port = 3001;
+// available routes
+
+app.use('/api/auth',require('./routes/auth'))
+  
+
+
 app.get("/getUsers", async (req, res) => {
   try {
     const result = await UserModel.find({}).exec();
