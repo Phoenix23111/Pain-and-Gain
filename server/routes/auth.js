@@ -10,8 +10,7 @@ const JWT_SECRET = "this is @ Secret"
 
 
 
-router.post(
-  "/",
+router.post("/createUser",
   //Validations
   [
     body("name", "Enter a Valid Name").isLength({ min: 3 }),
@@ -60,5 +59,23 @@ router.post(
     }
   }
 );
+//ROUTE:2 Authenticate a User
+
+Route.
+
+//ROUTE:3 GET USER
+
+router.post('/getuser',async(req,res)=>{
+
+  try {
+    userId ="todo"
+    const user = await User.findById(userId).select("-password"
+    )
+  } catch (error) {
+    console.error(error.message)
+    res.status(500).send("Internal Server Error")
+  }
+
+})
 
 module.exports = router;
