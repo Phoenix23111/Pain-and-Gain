@@ -25,17 +25,17 @@ app.get("/getUsers", async (req, res) => {
   }
 });
 
-app.post("/createUser", async (req, res) => {
-  try {
-    const user = req.body;
-    const newUser = new UserModel(user);
-    await newUser.save();
-    res.status(201).json(newUser); // 201 Created status for successful creation
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-});
+// app.post("/createUser", async (req, res) => {
+//   try {
+//     const user = req.body;
+//     const newUser = new UserModel(user);
+//     await newUser.save();
+//     res.status(201).json(newUser); // 201 Created status for successful creation
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// });
 
 app.listen(port, () => {
   console.log("Server Runs Perfectly at port " + port);
