@@ -15,15 +15,20 @@ import About from "./components/About";
 
 
 
+console.log(Location)
 
 function App() {
-  return (
 
+
+  return (
+    
+    
     <>
       <Router>
-        <Navbar />
+        <Navbar/>
        <Routes>
-        <Route exact path="/" element={<Home/>}/>
+       
+        <Route path="/" element={<Home/>}/>
         <Route path="Login/*" element={<Login/>} />
         <Route path="SignUp/*" element={<SignUp/>} />
         <Route path="About/*" element={<About/>}/>

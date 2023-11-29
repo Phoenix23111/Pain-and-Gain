@@ -15,15 +15,15 @@ app.use('/api/auth',require('./routes/auth'))
   
 
 
-app.get("/getUsers", async (req, res) => {
-  try {
-    const result = await UserModel.find({}).exec();
-    res.json(result);
-  } catch (error) {
-    console.error(error);
-    res.json(error);
-  }
-});
+// app.get("/getUsers", async (req, res) => {
+//   try {
+//     const result = await UserModel.find({}).exec();
+//     res.json(result);
+//   } catch (error) {
+//     console.error(error);
+//     res.json(error);
+//   }
+// });
 
 // app.post("/createUser", async (req, res) => {
 //   try {
