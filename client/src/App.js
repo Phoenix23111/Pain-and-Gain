@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import {
@@ -7,40 +6,34 @@ import {
   Route,
   // Link
 } from "react-router-dom";
-import Navbar from './components/Navbar'
-import SignUp from './components/SignUp'
-import Home from "./components/Home"
+import Navbar from "./components/Navbar";
+import SignUp from "./components/SignUp";
+import Home from "./components/Home";
 import Login from "./components/login";
 import About from "./components/About";
-
-
-
-console.log(Location)
+import GetUserState from "./context/authentication/GetUserState";
+import Homepage from "./components/Homepage";
+console.log(Location);
 
 function App() {
-
-
   return (
-    
-    
     <>
-      <Router>
-        <Navbar/>
-       <Routes>
-       
-        <Route path="/" element={<Home/>}/>
-        <Route path="Login/*" element={<Login/>} />
-        <Route path="SignUp/*" element={<SignUp/>} />
-        <Route path="About/*" element={<About/>}/>
-        
-        
-       </Routes>
-      </Router>
+      <GetUserState>
+        <div className=" bg-green-700">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="Login/*" element={<Login />} />
+            <Route path="SignUp/*" element={<SignUp />} />
+            <Route path="About/*" element={<About />} />
+            <Route path="Homepage/*" element={<Homepage/>}/>
+          </Routes>
+        </Router>
+        </div>
+      </GetUserState>
     </>
-    )
-  
+  );
 }
 
 export default App;
-
-

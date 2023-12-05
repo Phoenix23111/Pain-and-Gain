@@ -1,53 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect, useContext } from "react";
+import GetUserContext from "../context/authentication/GetUserContext";
 
 function Home() {
-  const [userData, setUserData] = useState(null);
-  
+  const a = useContext(GetUserContext)
   useEffect(() => {
-    const fetchUserData = async () => {
-      const token = localStorage.getItem("auth-token");
-
-      if (!token) {
-        console.error("No token found. User not authenticated.");
-        return;
-      }
-
-      try {
-        const response = await fetch("http://localhost:3001/api/auth/getUser", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token")
-          },
-        });
-
-        if (response.ok) {
-          const user = await response.json();
-          setUserData(user);
-        } else {
-          console.error("Error fetching user data:", response.statusText);
-        }
-      } catch (error) {
-        console.error("Error fetching user data:", error.message);
-      }
-    };
-
-    fetchUserData();
+    a.FetchUserData()
+      // eslint-disable-next-line 
   }, []);
 
 
   return (
-    <div>
-      <h2>Welcome to the Home Page</h2>
-      {userData ? (
-        <div>
-          <p>User Name: {userData.name}</p>
-          <p>User Email: {userData.email}</p>
-          {/* Add more information as needed */}
-        </div>
-      ) : (
-        <p>Loading user data...</p>
-      )}
+    <div className=" bg-yellow-400 text-black">
+      this is application Home
     </div>
   );
 }
