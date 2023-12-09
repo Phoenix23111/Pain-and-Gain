@@ -1,25 +1,25 @@
-// import React, { useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
-// import Login from "./login";
-// import SignUp from "./SignUp"
-// import Home from "./Home";
 
 export default function Navbar() {
   const Navigate = useNavigate();
   const location = useLocation();
-  // const token = localStorage.getItem("auth-token")
-  // useEffect(() => {
+  const [scrolling, setScrolling] = useState(false);
 
-  //   if (!token) {
-  //     Navigate("/Login");
-  //   }
-  //   // eslint-disable-next-line
-  // }, [token,Navigate]);
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    setScrolling(scrollY > 20);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleOnclick = (event) => {
     event.preventDefault();
-
     if (location.pathname !== "/" || location.pathname !== "/About") {
       Navigate("/");
     }
@@ -34,9 +34,12 @@ export default function Navbar() {
     <>
       
         <nav
-          className={`flex ${location.pathname === '/Login' || location.pathname === '/SignUp' ? 'fixed' : ''} w-full items-center justify-between flex-wrap backdrop-blur-lg  bg-cyan-500/40 text-white p-4`}
+          className={`flex z-50 fixed w-full items-center justify-between  border-b-2 border-white/40 text-white flex-wrap transition-all duration-400 ${
+            scrolling ? "bg-black border-none" : "bg-white/0"
+          } p-4`}
+          style={{ opacity: scrolling ? 1 : 0.8 }}
         >
-          <div className="flex items-center flex-shrink-0 text-black mr-6">
+          <div className="flex items-center flex-shrink-0 mr-6">
             <span className="font-extrabold text-xl tracking-tight">
               Pain and Gain
             </span>
@@ -46,19 +49,25 @@ export default function Navbar() {
               <Link
                 to="/"
                 onClick={handleOnclick}
-                className="block mt-4 lg:inline-block lg:mt-0   text-black hover:text-white mr-4"
+                className="block mt-4 lg:inline-block lg:mt-0   hover:text-white mr-4"
               >
                 Home
               </Link>
               <Link
                 to="/About"
-                className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
+                className="block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-4"
               >
-                about
+                About
               </Link>
               <Link
                 to="/About"
-                className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
+                className="block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-4"
+              >
+                Contacts
+              </Link>
+              <Link
+                to="/About"
+                className="block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-4"
               >
                 Shopping
               </Link>

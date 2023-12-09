@@ -50,7 +50,7 @@ const SignUp = () => {
   return (
     <>
       <div
-        className="flex min-h-screen justify-center py-7 sm:px-6 lg:px-20 "  style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        className="flex min-h-screen justify-center pt-5 sm:px-6 lg:px-20 "  style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
       >
         <div className="flex flex-col backdrop-blur-lg mt-20 bg-white/30 justify-center w-2/6 px-6 py-10 h-4/5 space-y-8 rounded-3xl">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -76,6 +76,7 @@ const SignUp = () => {
                       value={credentials.name}
                       onChange={onChange}
                       type="text"
+                      autoComplete="off"
                     />
                   </div>
                 </div>
@@ -95,6 +96,7 @@ const SignUp = () => {
                       value={credentials.email}
                       onChange={onChange}
                       type="email"
+                      autoComplete="off"
                     />
                   </div>
                 </div>
@@ -113,6 +115,7 @@ const SignUp = () => {
                       value={credentials.password}
                       onChange={onChange}
                       type={Visible ? "text" : "password"}
+                      autoComplete="off"
                     />
                     {Visible ? (
                       <AiOutlineEye

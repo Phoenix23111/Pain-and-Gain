@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
-import GetUserContext from '../context/authentication/GetUserContext'
+import React from 'react'
+
 
 function About() {
-  const a = useContext(GetUserContext)
+
   return (
-    <div>This is About {a.state.name}</div>
+    <div className='flex min-h-screen text-white pt-20'>This is About </div>
   )
 }
 

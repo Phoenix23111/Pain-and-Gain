@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
   const [credentials, setcredentials] = useState({ email: "", password: "" });
-  let Navigate = useNavigate();
-  const location = useLocation();
-  console.log("Current Path:", location.pathname);
+  let Navigate = useNavigate(); 
 
   const [Visible, setVisible] = useState(false);
 

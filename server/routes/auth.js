@@ -49,7 +49,9 @@ router.post(
           id: user.id,
         },
       };
+      
       const authtoken = jwt.sign(data, JWT_SECRET);
+      console.log("this is authtoken after Creation" , authtoken)
       success =true
       //res.json(user)
       res.json({ success,authtoken });
@@ -104,6 +106,7 @@ router.post(
         },
       };
       const authtoken = jwt.sign(data, JWT_SECRET);
+      console.log("this is authtoken after login" , authtoken)
       success=true
       //res.json(user)
       res.json({ success,authtoken });

@@ -4,8 +4,9 @@ const JWT_SECRET = "this is @ Secret";
 const fetchuser = (req, res, next) => {
   //get the user from jwt token and add id  to req obj
   const token = req.header("auth-token");
-  console.log("this is from fetch user=",token)
+  
   if (!token) {
+    console.log("this is from fetch user=",token)
     res.status(401).send({ error: "Please Authenticate  using a valid token" });
   }
 

@@ -13,15 +13,15 @@ import Login from "./components/login";
 import About from "./components/About";
 import GetUserState from "./context/authentication/GetUserState";
 import Homepage from "./components/Homepage";
-console.log(Location);
+
 
 function App() {
   return (
     <>
       <GetUserState>
-        <div className=" bg-green-700">
+          
         <Router>
-          <Navbar />
+        <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="Login/*" element={<Login />} />
@@ -30,7 +30,6 @@ function App() {
             <Route path="Homepage/*" element={<Homepage/>}/>
           </Routes>
         </Router>
-        </div>
       </GetUserState>
     </>
   );
