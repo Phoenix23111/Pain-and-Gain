@@ -4,11 +4,12 @@ const UserModel = require("./models/Users");
 const app = express();
 const cors = require("cors");
 connectToMongo();
-port = 3001;
+require('dotenv').config()
+
 
 app.use(express.json());
 app.use(cors());
-
+const port=process.env.Port
 // available routes
 
 app.use('/api/auth',require('./routes/auth'))
