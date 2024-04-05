@@ -1,17 +1,19 @@
+require("dotenv").config();
 const connectToMongo = require("./db");
 const express = require("express");
 const UserModel = require("./models/Users");
 const app = express();
 const cors = require("cors");
 connectToMongo();
-require('dotenv').config()
+
 
 
 app.use(express.json());
 app.use(cors());
-const port=process.env.Port
-// available routes
+const port=process.env.port
 
+
+// available routes
 app.use('/api/auth',require('./routes/auth'))
   
 
