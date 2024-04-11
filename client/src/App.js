@@ -1,4 +1,4 @@
-import React from "react";
+import {React, Suspense } from "react";
 
 import {
   BrowserRouter as Router,
@@ -13,7 +13,7 @@ import Login from "./components/login";
 import About from "./components/About";
 import GetUserState from "./context/authentication/GetUserState";
 import Homepage from "./components/Homepage";
-
+import Loader from "./components/loader";
 
 function App() {
   return (
@@ -21,7 +21,8 @@ function App() {
       <GetUserState>
           
         <Router>
-        <Navbar />
+          <Suspense fallback={<Loader />}>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="Login/*" element={<Login />} />
@@ -29,6 +30,7 @@ function App() {
             <Route path="About/*" element={<About />} />
             <Route path="Homepage/*" element={<Homepage/>}/>
           </Routes>
+          </Suspense>
         </Router>
       </GetUserState>
     </>
