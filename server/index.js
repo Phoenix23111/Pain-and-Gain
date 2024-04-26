@@ -5,6 +5,7 @@ const express = require("express");
 const UserModel = require("./models/Users");
 const app = express();
 const cors = require("cors");
+const { errorMiddleware } = require("./middleware/error");
 connectToMongo();
 
 
@@ -18,8 +19,11 @@ const port=process.env.port
 app.use('/api/auth',require('./routes/auth'))
 app.use('/api/v1/user', require('./routes/user'))
 
+app.use('/api/v1/product',require('./routes/products'))
 
 
+app.use("/uploads", express.static("uploads"));
+app.use(errorMiddleware)
 
 app.listen(port, () => {
   console.log("Server Runs Perfectly at port:".cyan, `${port}`.yellow);
