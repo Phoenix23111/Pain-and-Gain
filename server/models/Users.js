@@ -3,11 +3,7 @@ const validator = require("validator")
 
 
 const UserSchema = new mongoose.Schema({
-  _id:{
-    type: String,
-    required: [true,"Please Enter Id"],
-
-  },
+  
   name: {
     type: String,
     required: true,
@@ -24,7 +20,7 @@ const UserSchema = new mongoose.Schema({
   },
   profilePic:{
     type:String,
-    required: [true,"Please add Photo"],
+    //required: [true,"Please add Photo"],
   },
   role:{
     type: String,
@@ -34,11 +30,11 @@ const UserSchema = new mongoose.Schema({
   gender:{
     type: String,
     enum:["male","female"],
-    required: [true,"Please Enter your gender"],
+   // required: [true,"Please Enter your gender"],
   },
   dob:{
     type: Date,
-    required: [true,"Please Enter your Date of Birth"],
+    //required: [true,"Please Enter your Date of Birth"],
   },
 
 },

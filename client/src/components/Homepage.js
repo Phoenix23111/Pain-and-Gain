@@ -7,8 +7,9 @@ const Homepage = () => {
       a.FetchUserData()
         // eslint-disable-next-line 
     }, []);
+    console.log("this is pikachu state",a.state)
   return (
-    <div>
+    <div className='pt-16'>
         <h2>Welcome to the Home Page</h2>
       {a.state ? (
         <div>
