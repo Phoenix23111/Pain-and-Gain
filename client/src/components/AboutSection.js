@@ -5,7 +5,7 @@ const AboutSection = () => {
     <>
       <div className="flex-row mx-40 mt-16">
         <div className="w-auto h-auto text-red-700 justify-center text-center text-4xl font-bold font-serif">
-          ABOUT
+          ABOUT US
         </div>
         <div className="border border-red-700 border-double mt-1 w-auto"></div>
         <div className="grid grid-cols-2 mt-16 gap-y-14 gap-x-6 ">
@@ -14,12 +14,14 @@ const AboutSection = () => {
             <b className="text-red-700 text-xl">you</b> begins with personalized
             guidance and seamless integration."
           </div>
-          <div className="grid grid-cols-1 col-span-1 content-center justify-center items-center  pr-14">
-            <img
-              className="rounded-full h-80 w-80 object-cover mx-auto"
-              src="/images/image.png"
-              alt="1"
-            />
+          <div className="grid grid-cols-1 col-span-1 pl-14">
+            <div className="rounded-full h-80 w-80 object-cover mx-auto">
+              <img
+                className="rounded-full h-full w-auto object-cover mx-auto"
+                src="/images/image.png"
+                alt="1"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 col-span-1 pl-14">
