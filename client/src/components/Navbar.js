@@ -46,8 +46,8 @@ export default function Navbar() {
           </span>
         </div>
 
-        <div className="w-full flex flex-grow lg:flex lg:items-center font-bold lg:mx-4 lg:justify-end lg:w-auto">
-          <div className="text-sm ">
+        <div className="w-full flex flex-grow lg:flex lg:items-center  font-bold lg:mx-4 lg:justify-end lg:w-auto">
+          <div className=" grid grid-cols-4 text-sm gap-3 mr-2 ">
             <Link
               to="/"
               onClick={handleOnclick}

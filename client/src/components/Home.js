@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import AboutSection from "./AboutSection";
 import SliderHome from "./SliderHome";
 import FooterHome from "./FooterHome";
+import CHATBOT from "../CHATBOT";
+// import ProductsHome from "./ProductsHome";
 
 function Home() {
   const slides = [
@@ -10,8 +12,8 @@ function Home() {
     "https://wallpaperaccess.com/full/809523.jpg",
     "https://getwallpapers.com/wallpaper/full/5/c/0/606489.jpg",
   ];
-
   const [showAboutSection, setShowAboutSection] = useState(false);
+  const [showProductSection, setShowProductSection] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +21,18 @@ function Home() {
       const windowHeight = window.innerHeight;
 
       // Adjust this value as needed
-      const triggerPoint = 0.3 * windowHeight; // Trigger when user scrolls past half of the window height
+      const triggerPoint1 = 0.3 * windowHeight; // Trigger when user scrolls past half of the window height
+      const triggerPoint2 = 1.8 * windowHeight; // Trigger when user scrolls past half of the window height
 
-      if (scrollPosition > triggerPoint) {
+      if (scrollPosition > triggerPoint1) {
         setShowAboutSection(true);
       } else {
         setShowAboutSection(false);
+      }
+      if (scrollPosition > triggerPoint2) {
+        setShowProductSection(true);
+      } else {
+        setShowProductSection(false);
       }
     };
 
@@ -38,11 +46,14 @@ function Home() {
   return (
     <>
       <div className="grid grid-flow-row">
+        {/* SLIDER */}
         <div>
           <SliderHome slides={slides} />
         </div>
+        <CHATBOT></CHATBOT>
+        {/* About US */}
         <div className=" flex contain-content mx-auto w-auto h-auto px-4">
-          <div className="transition-transform duration-2000 ease-in-out transform">
+          <div className="transition-transform duration-[3000] delay-700 ease-in-out transform">
             <div
               className={`${
                 showAboutSection ? "slide-in" : ""
@@ -52,7 +63,7 @@ function Home() {
                 <AboutSection></AboutSection>
               </div>
             </div>
-            <style jsx>{`
+            <style>{`
               .slide-in {
                 animation: slideIn 1s forwards;
                 margin-top: 0px;
@@ -69,6 +80,41 @@ function Home() {
             `}</style>
           </div>
         </div>
+
+        {/* Shop */}
+
+        <div className="my-16  flex contain-content mx-auto w-auto h-auto px-4">
+          <div className="transition-transform duration-[3000] delay-100 ease-in-out transform">
+            <div
+              className={`${
+                showProductSection ? "slide-in1" : ""
+              } bg-white text-black h-auto pt-16  mt-28`}
+            >
+              <div className="bg-white  text-black">
+                {/* <ProductsHome /> */}
+              </div>
+            </div>
+            <style>{`
+              .slide-in1 {
+                animation: slideIn1 1s forwards;
+                margin-top: 0px;
+              }
+
+              @keyframes slideIn1 {
+                from {
+                  transform: translateX(-100%);
+                }
+                to {
+                  transform: translateX(0);
+                }
+              }
+            `}</style>
+          </div>
+        </div>
+
+        {/* Contact */}
+
+        {/* Footer */}
         <div className=" mt-16 flex-row">
           <FooterHome />
         </div>
