@@ -4,7 +4,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
   const [credentials, setcredentials] = useState({ email: "", password: "" });
-  let Navigate = useNavigate(); 
+  let Navigate = useNavigate();
 
   const [Visible, setVisible] = useState(false);
 
@@ -51,10 +51,13 @@ const Login = () => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="flex min-h-screen justify-center py-20 sm:px-6 lg:px-20 "  style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}>
+    <div
+      className="flex  min-h-screen justify-center py-20 sm:px-6 lg:px-20 "
+      style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+    >
       <div className="flex flex-col backdrop-blur-lg mt-10 bg-white/30 justify-center w-2/6 px-6 py-8 rounded-3xl">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <h2 className=" text-center text-3xl font-extrabold text-gray-900">
+          <h2 className=" text-center text-3xl font-extrabold text-red-800">
             Login
           </h2>
         </div>
@@ -116,14 +119,14 @@ const Login = () => {
               <div>
                 <button
                   type="submit"
-                  className="group relative w-full h-[40px] flex justify-center py-2  px-4 border  border-transparent text-sm  font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 "
+                  className="group relative w-full h-[40px] flex justify-center py-2  px-4 border  border-transparent text-sm  font-medium rounded-md text-white bg-red-800 hover:bg-red-600"
                 >
                   Log In
                 </button>
               </div>
               <div className="flex w-full">
                 <h4>Do not have an Account?</h4>
-                <Link to="/SignUp" className="text-blue-600 pl-2">
+                <Link to="/SignUp" className="text-red-800 pl-2">
                   {" "}
                   Sign-in{" "}
                 </Link>

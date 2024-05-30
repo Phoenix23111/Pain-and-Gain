@@ -9,6 +9,16 @@ module.exports = withMT({
         2000: "2000ms",
         3000: "3000ms",
       },
+      fontFamily: {
+        "material-symbols-outlined": [
+          '"Material Symbols Outlined"',
+          "sans-serif",
+        ],
+        "material-symbols-rounded": [
+          '"Material Symbols Rounded"',
+          "sans-serif",
+        ],
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import AboutSection from "./AboutSection";
 import SliderHome from "./SliderHome";
 import FooterHome from "./FooterHome";
-import CHATBOT from "../CHATBOT";
+import CHATBOT from "./CHATBOT";
 // import ProductsHome from "./ProductsHome";
 
 function Home() {
   const slides = [
-    "https://i.pinimg.com/originals/51/82/ac/5182ac536727d576c78a9320ac62de30.jpg",
-    "https://wallpapercave.com/wp/wp3386769.jpg",
+    "https://github.com/Phoenix23111/Pain-and-Gain/blob/master/client/public/images/wp5462287-gym-hd-desktop-wallpapers.jpg",
+    "https://github.com/Phoenix23111/Pain-and-Gain/blob/master/client/public/images/wp9160506-4k-gym-logo-wallpapers.jpg",
     "https://wallpaperaccess.com/full/809523.jpg",
     "https://getwallpapers.com/wallpaper/full/5/c/0/606489.jpg",
   ];
@@ -50,7 +50,10 @@ function Home() {
         <div>
           <SliderHome slides={slides} />
         </div>
-        <CHATBOT></CHATBOT>
+        <div>
+          <CHATBOT />
+        </div>
+
         {/* About US */}
         <div className=" flex contain-content mx-auto w-auto h-auto px-4">
           <div className="transition-transform duration-[3000] delay-700 ease-in-out transform">

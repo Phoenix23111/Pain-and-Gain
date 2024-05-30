@@ -50,7 +50,8 @@ const SignUp = () => {
   return (
     <>
       <div
-        className="flex min-h-screen justify-center pt-5 sm:px-6 lg:px-20 "  style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        className="flex min-h-screen justify-center pt-5 sm:px-6 lg:px-20 "
+        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
       >
         <div className="flex flex-col backdrop-blur-lg mt-20 bg-white/30 justify-center w-2/6 px-6 py-10 h-4/5 space-y-8 rounded-3xl">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -166,7 +167,7 @@ const SignUp = () => {
                 <div className="flex justify-end ">
                   <button
                     type="submit"
-                    className="group relative w-full h-[40px] flex justify-center py-2  px-4 border  border-transparent text-sm  font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 "
+                    className="group relative w-full h-[40px] flex justify-center py-2  px-4 border  border-transparent text-sm  font-medium rounded-md text-white bg-red-600 hover:bg-red-800 "
                   >
                     signup
                   </button>
